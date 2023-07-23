@@ -10,6 +10,25 @@
     --MaxWidth: 1280px
 }
 
+/* ::-webkit-scrollbar{
+    width: 10px;
+    
+}
+
+::-webkit-scrollbar-track{
+    background-color:black;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #ec5151;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #ff0000;
+} */
+
+
+
 html,
 body {
     height: 100%;
@@ -371,7 +390,7 @@ section.banner {
     border-radius: 2px;
     top: -5px;
     right: 20px;
-    width: 15%;
+    width: 40%;
     height: 3px;
 }
 
@@ -382,7 +401,7 @@ section.banner {
     background-color: black;
     top: -5px;
     left: 20px;
-    width: 15%;
+    width: 40%;
     border-radius: 2px;
     height: 3px;
 }
@@ -433,6 +452,45 @@ form .input-wrapper:nth-of-type(5) {
     display: inline-block;
 }
 
+footer {
+    display: flex;
+    padding: 50px 2%;
+    background-color: #252525;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1%;
+}
+
+footer .container ul {
+    display: flex;
+    list-style-type: none;
+}
+
+footer .container li {
+    margin: 0 10px;
+}
+
+
+footer .container li a {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+footer p {
+    color: white;
+    font-size: 23px;
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+
 .venda {
     min-height: 90%;
     padding: 90px 0;
@@ -470,17 +528,18 @@ form .input-wrapper:nth-of-type(5) {
     height: 3px;
 }
 
+
 .content-venda {
     margin-top: 40px;
 }
 
-.siderbar {
+.sidebar {
     float: left;
     width: 30%;
 }
 
 .search1 {
-    width: 300px;
+    width: 90%;
 }
 
 .search1 h2 {
@@ -504,7 +563,7 @@ form .input-wrapper:nth-of-type(5) {
     width: 30%;
     height: 20px;
     ;
-    background-color: #ccc;
+    background: linear-gradient(to bottom, white, #ccc);
     border-radius: 20px;
 }
 
@@ -512,8 +571,8 @@ form .input-wrapper:nth-of-type(5) {
     width: 26px;
     height: 26px;
     border-radius: 40px;
-    background-color: rgb(210, 210, 210);
-    border: 1px solid black;
+    background: linear-gradient(to bottom, #ccc, white);
+    border: 2px solid rgb(84, 84, 84);
     position: absolute;
     top: -3px;
     left: calc(30% - 13px);
@@ -532,21 +591,26 @@ form .input-wrapper:nth-of-type(5) {
     float: right;
     padding-right: 10px;
 }
-.search2{
+
+.search2 {
     margin-top: 40px;
 }
-.search2 h2{
+
+.search2 h2 {
     font-size: 24px;
     font-weight: normal;
 
 }
-.form-venda-wrapper{
+
+.form-venda-wrapper {
     margin-top: 12px;
 }
-.form-venda-wrapper input{
+
+.form-venda-wrapper input {
     display: none;
 }
-.form-venda-wrapper label{
+
+.form-venda-wrapper label {
     width: 20px;
     height: 20px;
     border: 1px solid #ccc;
@@ -554,14 +618,122 @@ form .input-wrapper:nth-of-type(5) {
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
+    position: relative;
 }
-.form-venda-wrapper span{
+
+.form-venda-wrapper span {
     vertical-align: top;
     padding: 0 10px;
     display: inline-block;
 }
 
+.form-venda-wrapper input[type=checkbox]:checked+label>.circle {
+    display: block;
 
+}
+
+.circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: black;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    display: none;
+}
+
+.vitrine-venda {
+    float: left;
+    width: 70%;
+}
+
+.vitrine-venda .vitrine-destaque {
+    margin-top: 20px;
+}
+
+.nome-veiculo>h2 {
+    text-align: center;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 24px;
+    text-transform: uppercase
+}
+
+
+.nome-veiculo>h2::before {
+    content: " ";
+    display: inline-block;
+    position: relative;
+    background-color: black;
+    border-radius: 2px;
+    top: -5px;
+    right: 20px;
+    width: 40%;
+    height: 3px;
+}
+.nome-veiculo >h2::after{
+    content: " ";
+    display: inline-block;
+    position: relative;
+    background-color: black;
+    top: -5px;
+    left: 20px;
+    width: 40%;
+    border-radius: 2px;
+    height: 3px;
+}
+.venda-single{
+    padding: 0 2%;
+}
+.venda-single .container{
+    padding: 45px 0;
+    max-width: 1280px;
+}
+.info-veiculo{
+    float: left;
+    width: 60%;
+}
+.descricao-veiculo{
+    float: left;
+    width: 40%;
+    padding: 20px;
+}
+.descricao-veiculo p{
+    max-width: 300px;
+    margin-top: 25px;
+    
+}
+.descricao-veiculo a {
+    margin-top: 25px;
+}
+.foto-destaque{
+    width: var(--width100);
+    padding-top: 50%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.nav-galeria{
+    width: var(--width100);
+    padding: 15px;
+    margin-top: 15px;
+    overflow-x: auto;
+
+
+}
+
+.nav-galeria-wrapper{
+    width: 200%;
+}
+.mini-img{
+    float: left;
+    background-position: center;
+    background-size: cover;
+    border: 5px solid white;
+    padding-top:calc((33.3% * 100 / 200) * 0.4) ;
+    width: calc(33.3% * 100 / 200);
+}
 
 
 
@@ -626,45 +798,28 @@ form .input-wrapper:nth-of-type(5) {
         padding: 10px 4%;
     }
 
-}
+    .sidebar {
+        width: var(--width100);
+        text-align: center;
+    }
 
-footer {
-    display: flex;
-    padding: 50px 2%;
-    background-color: #252525;
-}
+    .search1 {
+        display: inline-block;
+    }
 
-footer .container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1%;
-}
+    .search2 {
+        display: inline-block;
+        text-align: center;
+    }
 
-footer .container ul {
-    display: flex;
-    list-style-type: none;
-}
+    .vitrine-venda {
+        float: left;
+        width: var(--width100);
+        text-align: center;
+    }
 
-footer .container li {
-    margin: 0 10px;
-}
-
-footer .container li a {
-    text-decoration: none;
-    color: white;
-    font-size: 23px;
-    font-weight: normal;
-    font-style: italic;
-}
-
-footer p {
-    color: white;
-    font-size: 23px;
-    font-weight: normal;
-    font-style: italic;
 
 }
-
 
 
 
