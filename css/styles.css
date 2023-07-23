@@ -672,7 +672,8 @@ footer p {
     width: 40%;
     height: 3px;
 }
-.nome-veiculo >h2::after{
+
+.nome-veiculo>h2::after {
     content: " ";
     display: inline-block;
     position: relative;
@@ -683,38 +684,46 @@ footer p {
     border-radius: 2px;
     height: 3px;
 }
-.venda-single{
+
+.venda-single {
     padding: 0 2%;
 }
-.venda-single .container{
+
+.venda-single .container {
     padding: 45px 0;
     max-width: 1280px;
 }
-.info-veiculo{
+
+.info-veiculo {
     float: left;
     width: 60%;
 }
-.descricao-veiculo{
+
+.descricao-veiculo {
     float: left;
     width: 40%;
     padding: 20px;
 }
-.descricao-veiculo p{
+
+.descricao-veiculo p {
     max-width: 300px;
     margin-top: 25px;
-    
+
 }
+
 .descricao-veiculo a {
     margin-top: 25px;
 }
-.foto-destaque{
+
+.foto-destaque {
     width: var(--width100);
     padding-top: 50%;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 }
-.nav-galeria{
+
+.nav-galeria {
     width: var(--width100);
     padding: 15px;
     margin-top: 15px;
@@ -723,18 +732,91 @@ footer p {
 
 }
 
-.nav-galeria-wrapper{
+.nav-galeria-wrapper {
     width: 200%;
 }
-.mini-img{
+
+.mini-img {
     float: left;
     background-position: center;
     background-size: cover;
     border: 5px solid white;
-    padding-top:calc((33.3% * 100 / 200) * 0.4) ;
+    padding-top: calc((33.3% * 100 / 200) * 0.4);
     width: calc(33.3% * 100 / 200);
 }
 
+.sobre>h2 {
+    text-align: center;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 30px 0 50px;
+}
+
+.sobre>h2::before {
+    content: " ";
+    display: inline-block;
+    position: relative;
+    background-color: black;
+    top: -5px;
+    right: 20px;
+    width: 40%;
+    border-radius: 2px;
+    height: 3px;
+
+}
+
+.sobre>h2::after {
+    content: " ";
+    display: inline-block;
+    position: relative;
+    background-color: black;
+    top: -5px;
+    left: 20px;
+    width: 40%;
+    border-radius: 2px;
+    height: 3px;
+}
+
+.sobre-img-wrapper {
+
+    max-width: 800px;
+    padding: 0 2% 50px;
+    margin: 0 auto;
+}
+
+.sobre-img {
+
+    width: 100%;
+    height: 400px;
+    background-color: #ccc;
+}
+
+.descricao-sobre-img>h2 {
+    font-size: 30px;
+    font-weight: normal;
+    padding: 10px 0;
+}
+
+.descricao-sobre-img>p {
+    margin-top: 10px;
+}
+
+.sobre-imgtexto {
+    margin-top: 20px;
+    display: flex;
+}
+
+.sobre-imgtexto .img {
+    width: 100%;
+    height: 200px;
+    background-color: #ccc;
+}
+
+.sobre-imgtexto p {
+    padding-left: 10px;
+}
 
 
 
@@ -818,6 +900,65 @@ footer p {
         text-align: center;
     }
 
+    .info-veiculo {
+        width: var(--width100);
+    }
+
+    .descricao-veiculo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        float: none;
+        width: var(--width100);
+    }
+
+    .descricao-veiculo p {
+        max-width: none;
+        padding: 0 2%;
+    }
+
+    .nome-veiculo>h2::after {
+        width: 25%;
+    }
+
+    .nome-veiculo>h2::before {
+        width: 25%;
+    }
+
+    .contato>h2::before {
+        width: 25%;
+    }
+
+    .contato>h2::after {
+        width: 25%;
+    }
+    .sobre>h2::before {
+        width: 25%;
+    }
+
+    .sobre>h2::after {
+        width: 25%;
+    }
+
+    .sobre-img {
+        height: 300px;
+    }
+
+    .sobre-imgtexto {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sobre-imgtexto .img {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .sobre-imgtexto p {
+        margin-top: 10px;
+        max-width: 550px;
+
+    }
 
 }
 
@@ -849,6 +990,9 @@ footer p {
     .vitrine-destaque a {
         display: inline-block;
     }
+    /* .sobre-imgtexto .img{
+        width: 70%;
+    } */
 
     footer .container {
         flex-direction: column;
