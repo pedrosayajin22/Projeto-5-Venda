@@ -49,5 +49,51 @@ $(function () {
         $('body').css('user-select', 'auto')
         $('body').css('-o-user-select', 'auto')
     }
+    var imgShow = 3
+    var MaxIndex = Math.ceil($('.mini-img-wraper').length / 3) - 1
+    var currentIndex = 0
 
+    function initSlider() {
+        var amount = $('.mini-img-wraper').length * 33.3;
+        var elementoScroll = $('.nav-galeria-wrapper');
+        var elementoSingle = $('.mini-img-wraper');
+        elementoScroll.css("width", amount + "%");
+        elementoSingle.css("width", 33.3 * (100 / amount) + "%")
+    }
+    initSlider()
+    function navigateSlider() {
+        $(".arrow-right-nav").click(function () {
+            if (currentIndex < MaxIndex) {
+                currentIndex++
+                var elementoOffset = $('.mini-img-wraper').eq(currentIndex * 3).offset().left - $('.nav-galeria-wraper').offset().left
+                $('.nav-galeria').animate({ 'scrollLeft': elementoOffset + 'px' })
+            }
+        })
+        $('.arrow-left-nav').click(function () {
+            if (currentIndex > 0) {
+                currentIndex--
+                var elementoOffset = $('.mini-img-wraper').eq(currentIndex * 3).offset().left - $('.nav-galeria-wraper').offset().left
+                $('.nav-galeria').animate({ 'scrollLeft': elementoOffset + 'px' })
+            }
+
+        })
+    }
+    navigateSlider()
+    function clickSlider() {
+        $('.mini-img ').click(function () {
+            $('.mini-img').css('box-shadow','0px 0px 0px 0px black')
+            $(this).css('box-shadow','0px 0px 8px 0px black')
+            var img=$(this).css('background-image')
+            $('.foto-destaque').css('background-image', img)
+        })
+        $('.mini-img').eq(0).click()
+    }
+    clickSlider()
+
+    $('[goto=contato]').click(function(e){
+        $('html,body').animate({'scrollTop':$('#contato').offset().top})
+        return false
+    })
 })
+
+// style="background-image: url(./imagens/carro1.jpg);"
